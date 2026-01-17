@@ -1,0 +1,37 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HospitalSystem.Domain.Common;
+
+public abstract class BaseEntity
+{
+    public int Id { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
+    public bool IsActive { get; set; } = true;
+    
+    [NotMapped]
+    public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents?.AsReadOnly() ?? new List<BaseEvent>().AsReadOnly();
+    
+    private List<BaseEvent>? _domainEvents = new();
+    
+    public void AddDomainEvent(BaseEvent domainEvent)
+    {
+        _domainEvents ??= new List<BaseEvent>();
+        _domainEvents.Add(domainEvent);
+    }
+    
+    public void RemoveDomainEvent(BaseEvent domainEvent)
+    {
+        _domainEvents?.Remove(domainEvent);
+    }
+    
+    public void ClearDomainEvents()
+    {
+        _domainEvents?.Clear();
+    }
+}
+
+public abstract class BaseEvent
+{
+    public DateTime OccurredOn { get; set; } = DateTime.UtcNow;
+}

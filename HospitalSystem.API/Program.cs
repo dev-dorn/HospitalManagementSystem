@@ -35,7 +35,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 var app = builder.Build();
 
 //Http pipeline for requests
-if (app.Enviroment.IsDeveopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -52,7 +52,7 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dbContext.Database.EnsureCreated();
     // Seed test data is the database is empty
-    if (dbContext.Patients.Any())
+    if (!dbContext.Patients.Any())
     {
         dbContext.Patients.AddRange(
             new Patient
@@ -60,7 +60,7 @@ using (var scope = app.Services.CreateScope())
                 PatientCode = "HOSP-001",
                 FirstName = "John",
                 LastName = "DOE",
-                DateofBirth= new DateTime(1990, 1,1),
+                DateOfBirth= new DateTime(1990, 1,1),
                 Gender = "Male",
                 PhoneNumber = "12345678",
                 Email = "john.doe@example.com",

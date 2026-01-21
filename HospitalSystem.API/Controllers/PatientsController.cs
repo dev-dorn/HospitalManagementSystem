@@ -180,9 +180,8 @@ public class PatientsController : ControllerBase
             var patient = await _context.Patients.FindAsync(id);
             
             if (patient == null)
-            {
                 return NotFound();
-            }
+            
             
             _context.Patients.Remove(patient);
             await _context.SaveChangesAsync();

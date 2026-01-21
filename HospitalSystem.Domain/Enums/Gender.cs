@@ -4,5 +4,7 @@ public enum Gender
 {
     Male,
     Female,
-    Other
+    Other,
+    Unknown,
+    DeclinedToState
 }

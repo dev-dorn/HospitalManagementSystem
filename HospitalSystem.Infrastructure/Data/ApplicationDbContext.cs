@@ -53,8 +53,22 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         modelBuilder.Entity<Appointment>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.AppointmentCode).IsRequired().HasMaxLength(20);
-            entity.HasIndex(e => e.AppointmentCode).IsUnique();
+
+        // ENHANCEMENT: Indexing the Code for high-speed lookups in busy clinics
+
+            entity.Property(e => e.AppointmentCode)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            entity.HasIndex(e => e.AppointmentCode)
+                .IsUnique();
+        // ENHANCEMENT: Enum Conversion
+        // We store the Enum as a string ("CheckedIn" vs 1) in the DB. 
+         // This makes the database readable for external PowerBI or Excel reports.
+            entity.Property(e => e.Status)
+                .HasConversion<string>()
+                .HasMaxLength(20)
+                .IsRequired();
 
             // REVIEW: Relationships
             // We use .Restrict to prevent accidental deletion of a patient 

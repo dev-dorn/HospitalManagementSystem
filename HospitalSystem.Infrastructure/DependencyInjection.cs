@@ -8,12 +8,12 @@ namespace HospitalSystem.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection service, IConfiguration configuration)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options => 
-            options.UserInMemoryDatabase("HospitalDb"));
+            options.UseInMemoryDatabase("HospitalDb"));
 
-        service.AddScoped<IApplicationDbContext>(provider =>
+        services.AddScoped<IApplicationDbContext>(provider =>
         
             provider.GetRequiredService<ApplicationDbContext>());
 

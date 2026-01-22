@@ -1,25 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Change this to net10.0 to use the .NET 10 runtime -->
-    <TargetFramework>net10.0</TargetFramework>
-    
-    <!-- Explicitly setting C# 14 (optional, as net10.0 defaults to it) -->
-    <LangVersion>14.0</LangVersion>
-
+    <!-- Change back to net9.0 to match your installed SDK -->
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    
-    <!-- Recommended: Update your program versioning here as well -->
-    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Update your package versions to the 10.x series for .NET 10 compatibility -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <!-- Use 9.0.x versions to match your runtime -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>

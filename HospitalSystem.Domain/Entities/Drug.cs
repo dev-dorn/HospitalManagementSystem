@@ -1,5 +1,5 @@
 using HospitalSystem.Domain.Common;
-
+using System.ComponentModel.DataAnnotations;
 namespace HospitalSystem.Domain.Entities;
 
 public class Drug : BaseEntity
@@ -37,7 +37,7 @@ public class Drug : BaseEntity
 
     // --- NAVIGATION ---
     public virtual ICollection<Prescription> Prescriptions { get; set; } = new HashSet<Prescription>();
-    public virtual ICollection<InventoryTransaction> InventoryTransactions { get; set; } = new HashSet<InventoryTransaction>();
+    //public virtual ICollection<InventoryTransaction> InventoryTransactions { get; set; } = new HashSet<InventoryTransaction>();
 
     // --- DOMAIN LOGIC ---
     public bool IsLowStock => CurrentStock <= MinimumStockLevel;

@@ -7,5 +7,6 @@ public enum UserRole
     Nurse,
     Pharmacist,
     Receptionist,
-    Accountant
+    Accountant,
+    LabTechnician
 }

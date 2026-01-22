@@ -16,6 +16,9 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<Patient> Patients => Set<Patient>();
     public DbSet<Doctor> Doctors => Set<Doctor>(); 
     public DbSet<Appointment> Appointments => Set<Appointment>();
+    public DbSet<MedicalRecord> MedicalRecords => Set<MedicalRecord>();
+    public DbSet<Prescription> Prescriptions => Set<Prescription>();
+    public DbSet<Drug> Drugs => Set<Drug>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

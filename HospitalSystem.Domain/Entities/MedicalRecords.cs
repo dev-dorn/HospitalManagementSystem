@@ -7,7 +7,7 @@ public class MedicalRecord : BaseEntity
     public virtual Patient Patient {get; set;} = null!;
     public int DoctorId {get; set;}
     public virtual Doctor Doctor {get; set;} = null!;
-    public int? DoctorId {get; set;} = null!;
+    
     public int? AppointmentId {get; set;} //cant ve
     public virtual Appointment? Appointment {get; set;}
     //critical Data Soap format --
@@ -38,6 +38,6 @@ public class MedicalRecord : BaseEntity
 
         }
         IsFinalized = true;
-        FinalizedAt = Datetime.UtcNow;
+        FinalizedAt = DateTime.UtcNow;
     }
 }

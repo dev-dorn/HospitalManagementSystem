@@ -1,0 +1,12 @@
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/bin/Debug/net10.0/HospitalSystem.Shared.deps.json
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/bin/Debug/net10.0/HospitalSystem.Shared.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/bin/Debug/net10.0/HospitalSystem.Shared.pdb
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.AssemblyInfoInputs.cache
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.AssemblyInfo.cs
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.csproj.CoreCompileInputs.cache
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.sourcelink.json
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/refint/HospitalSystem.Shared.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/HospitalSystem.Shared.pdb
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/obj/Debug/net10.0/ref/HospitalSystem.Shared.dll

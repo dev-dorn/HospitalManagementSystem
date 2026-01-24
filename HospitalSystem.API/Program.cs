@@ -1,18 +1,19 @@
 using HospitalSystem.Infrastructure.Data;
-using HospitalSystem.Domain.Entities; // Required for 'Patient' and 'Doctor'
+using HospitalSystem.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using HospitalSystem.Infrastructure; // Ensures .AddInfrastructure() is found
+using HospitalSystem.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // --- SERVICES ---
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
+    c.SwaggerDoc("v1", new()
     {
         Title = "Hospital Management System API",
         Version = "v1",
@@ -30,9 +31,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Load DB, MediatR, and AutoMapper via your Infrastructure/Application extensions
 builder.Services.AddInfrastructure(builder.Configuration);
-// builder.Services.AddApplication(); // Ensure this is called to register MediatR!
 
 var app = builder.Build();
 
@@ -43,8 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// FIX: 'UseHttpRedirection' was misspelled as 'UseHttpRedirection' (double-check casing)
-app.UseHttpsRedirection(); 
+app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 app.UseAuthorization();
 app.MapControllers();
@@ -56,50 +54,43 @@ using (var scope = app.Services.CreateScope())
     try 
     {
         var dbContext = services.GetRequiredService<ApplicationDbContext>();
-        
-        // Use Migrate() instead of EnsureCreated() if using Migrations
         dbContext.Database.EnsureCreated();
 
         if (!dbContext.Patients.Any())
         {
-            dbContext.Patients.AddRange(
-                new Patient
-                {
-                    PatientCode = "HOSP-000001",
-                    FirstName = "John",
-                    LastName = "Doe",
-                    NationalId = "12345678", // Added for 2026 Compliance
-                    DateOfBirth = new DateTime(1990, 1, 1),
-                    Gender = "Male",
-                    PhoneNumber = "0712345678",
-                    Email = "john.doe@example.com",
-                    HasConsentedToDataProcessing = true,
-                    CreatedAt = DateTime.UtcNow // FIX: was DateTime.Utc.Now
-                }
-            );
+            dbContext.Patients.Add(new Patient
+            {
+                PatientCode = "HOSP-000001",
+                FirstName = "John",
+                LastName = "Doe",
+                NationalId = "12345678",
+                DateOfBirth = new DateTime(1990, 1, 1),
+                Gender = "Male",
+                PhoneNumber = "0712345678",
+                Email = "john.doe@example.com",
+                HasConsentedToDataProcessing = true,
+                CreatedAt = DateTime.UtcNow
+            });
 
-            dbContext.Doctors.AddRange(
-                new Doctor
-                {
-                    DoctorCode = "DOC-001",
-                    FirstName = "Robert",
-                    LastName = "Wilson",
-                    LicenseNumber = "KMPDC-A123", // Added for Kenya 2026 Compliance
-                    Specialization = "Cardiology",
-                    Qualification = "MD, Cardiology",
-                    PhoneNumber = "0722000111",
-                    ConsultationFee = 3000.00m, // KES
-                    IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
-                }
-            );
+            dbContext.Doctors.Add(new Doctor
+            {
+                DoctorCode = "DOC-001",
+                FirstName = "Robert",
+                LastName = "Wilson",
+                LicenseNumber = "KMPDC-A123",
+                Specialization = "Cardiology",
+                Qualification = "MD, Cardiology",
+                PhoneNumber = "0722000111",
+                ConsultationFee = 3000.00m,
+                IsAvailable = true,
+                CreatedAt = DateTime.UtcNow
+            });
 
             dbContext.SaveChanges();
         }
     }
     catch (Exception ex)
     {
-        // For testing, write to console if seeding fails
         Console.WriteLine($"An error occurred seeding the DB: {ex.Message}");
     }
 }

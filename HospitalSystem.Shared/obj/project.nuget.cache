@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GjGmnodkdY0=",
+  "dgSpecHash": "axWUiR2G8SI=",
   "success": true,
   "projectFilePath": "/home/godzilla/HospitalManagementSystem/HospitalSystem.Shared/HospitalSystem.Shared.csproj",
-  "expectedPackageFiles": [
-    "/home/godzilla/.nuget/packages/microsoft.netcore.app.ref/9.0.12/microsoft.netcore.app.ref.9.0.12.nupkg.sha512",
-    "/home/godzilla/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.12/microsoft.aspnetcore.app.ref.9.0.12.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

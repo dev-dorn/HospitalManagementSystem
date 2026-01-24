@@ -1,0 +1,16 @@
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/bin/Debug/net10.0/HospitalSystem.Application.deps.json
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/bin/Debug/net10.0/HospitalSystem.Application.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/bin/Debug/net10.0/HospitalSystem.Application.pdb
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/bin/Debug/net10.0/HospitalSystem.Domain.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/bin/Debug/net10.0/HospitalSystem.Domain.pdb
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.csproj.AssemblyReference.cache
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.AssemblyInfoInputs.cache
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.AssemblyInfo.cs
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.csproj.CoreCompileInputs.cache
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.sourcelink.json
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/Hospital.CA47ADE6.Up2Date
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/refint/HospitalSystem.Application.dll
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/HospitalSystem.Application.pdb
+/home/godzilla/HospitalManagementSystem/HospitalSystem.Application/obj/Debug/net10.0/ref/HospitalSystem.Application.dll
